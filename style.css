@@ -8,3 +8,9 @@
     font-family: 'Minecraftia';
     font-size: 20px;
 }
+#history{
+    position: absolute;
+    font-family: 'Minecraftia';
+    font-size: 20px;
+    margin-bottom : 100px;
+}
