@@ -1,0 +1,11 @@
+.menu{
+    background: rgb(0, 255, 13);
+    font-family: 'Courier New', Courier, monospace, bold;
+    font-size: 50px
+}
+.pixelify-sans {
+    font-family: "Pixelify Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
