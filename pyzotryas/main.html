@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Hardest Puzotryas Level List
+    </title>
+
+
+    <style>
+
+        :root {
+
+            --bg-color: #111923;
+
+            --card-color: #1d2938;
+
+            --card-hover: #243346;
+
+            --border-color: #344355;
+
+            --text-color: #ffffff;
+
+            --muted-color: #8793a4;
+
+            --accent-color: #4da3ff;
+
+            --green-color: #2bd879;
+
+            --nav-color: #172230;
+
+        }
+
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            padding: 28px 14px;
+
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
+            background:
+                var(--bg-color);
+
+            color:
+                var(--text-color);
+
+        }
+
+
+        body.modal-open {
+
+            overflow: hidden;
+
+        }
+
+
+        .page {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+        }
+
+
+        header {
+
+            text-align: center;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        header h1 {
+
+            margin: 0 0 6px;
+
+            font-size: 2.2rem;
+
+        }
+
+
+        header p {
+
+            margin: 0;
+
+            color: var(--muted-color);
+
+        }
+
+
+        /* ========================= */
+        /* ВКЛАДКИ */
+        /* ========================= */
+
+        nav {
+
+            display: flex;
+
+            gap: 6px;
+
+            width: 100%;
+
+            margin-bottom: 18px;
+
+            padding: 5px;
+
+            background:
+                var(--nav-color);
+
+            border:
+                1px solid var(--border-color);
+
+            border-radius:
+                10px;
+
+        }
+
+
+        .tab-btn {
+
+            flex: 1;
+
+            border: 0;
+
+            border-radius: 7px;
+
+            padding: 11px 14px;
+
+            background:
+                transparent;
+
+            color:
+                var(--muted-color);
+
+            font-size:
+                0.95rem;
+
+            font-weight:
+                700;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.18s ease;
+
+        }
+
+
+        .tab-btn:hover {
+
+            color:
+                var(--text-color);
+
+            background:
+                rgba(255,255,255,0.05);
+
+        }
+
+
+        .tab-btn.active {
+
+            color:
+                white;
+
+            background:
+                var(--accent-color);
+
+        }
+
+
+        /* ========================= */
+        /* СПИСОК */
+        /* ========================= */
+
+        #demon-list {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                12px;
+
+        }
+
+
+        .level-card {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                16px;
+
+            min-height:
+                138px;
+
+            padding:
+                14px 16px;
+
+            background:
+                var(--card-color);
+
+            border:
+                1px solid var(--border-color);
+
+            border-radius:
+                16px;
+
+            box-shadow:
+                0 4px 14px rgba(0,0,0,0.18);
+
+            cursor:
+                pointer;
+
+            transition:
+                transform 0.18s ease,
+                background 0.18s ease;
+
+        }
+
+
+        .level-card:hover {
+
+            transform:
+                translateY(-2px);
+
+            background:
+                var(--card-hover);
+
+        }
+
+
+        .level-image {
+
+            flex:
+                0 0 225px;
+
+            width:
+                225px;
+
+            height:
+                126px;
+
+            object-fit:
+                cover;
+
+            border-radius:
+                12px;
+
+            background:
+                #0d141d;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+        }
+
+
+        .level-info {
+
+            min-width:
+                0;
+
+            flex:
+                1;
+
+        }
+
+
+        .level-title {
+
+            display:
+                flex;
+
+            align-items:
+                baseline;
+
+            gap:
+                9px;
+
+            margin-bottom:
+                6px;
+
+        }
+
+
+        .position {
+
+            flex:
+                0 0 auto;
+
+            color:
+                var(--accent-color);
+
+            font-size:
+                1.15rem;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .name {
+
+            overflow:
+                hidden;
+
+            text-overflow:
+                ellipsis;
+
+            white-space:
+                nowrap;
+
+            font-size:
+                1.12rem;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .meta {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                7px;
+
+            color:
+                var(--muted-color);
+
+            font-size:
+                0.92rem;
+
+        }
+
+
+        .separator {
+
+            color:
+                #586577;
+
+        }
+
+
+        .verifier {
+
+            color:
+                var(--green-color);
+
+            font-weight:
+                700;
+
+        }
+
+
+        .points {
+
+            margin-top:
+                5px;
+
+            color:
+                var(--muted-color);
+
+            font-size:
+                0.92rem;
+
+        }
+
+
+        .points-value {
+
+            color:
+                var(--accent-color);
+
+            font-weight:
+                800;
+
+        }
+
+
+        .difficulty {
+
+            color:
+                #aab4c3;
+
+        }
+
+
+        .empty-message {
+
+            padding:
+                40px 20px;
+
+            text-align:
+                center;
+
+            color:
+                var(--muted-color);
+
+        }
+
+
+        /* ========================= */
+        /* МОДАЛЬНОЕ ОКНО */
+        /* ========================= */
+
+        .level-modal {
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            z-index:
+                1000;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                20px;
+
+            background:
+                rgba(0,0,0,0.75);
+
+            opacity:
+                0;
+
+            visibility:
+                hidden;
+
+            transition:
+                opacity 0.2s ease,
+                visibility 0.2s ease;
+
+        }
+
+
+        .level-modal.visible {
+
+            opacity:
+                1;
+
+            visibility:
+                visible;
+
+        }
+
+
+        .level-modal-content {
+
+            position:
+                relative;
+
+            width:
+                100%;
+
+            max-width:
+                800px;
+
+            max-height:
+                90vh;
+
+            overflow-y:
+                auto;
+
+            padding:
+                24px;
+
+            background:
+                #1d2938;
+
+            border:
+                1px solid #344355;
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.5);
+
+            transform:
+                translateY(15px);
+
+            transition:
+                transform 0.2s ease;
+
+        }
+
+
+        .level-modal.visible
+        .level-modal-content {
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* ========================= */
+        /* КНОПКА ЗАКРЫТИЯ */
+        /* ========================= */
+
+        .modal-close {
+
+            position:
+                absolute;
+
+            top:
+                12px;
+
+            right:
+                15px;
+
+            width:
+                38px;
+
+            height:
+                38px;
+
+            border:
+                0;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            color:
+                white;
+
+            font-size:
+                26px;
+
+            line-height:
+                38px;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.15s ease;
+
+            z-index:
+                5;
+
+        }
+
+
+        .modal-close:hover {
+
+            background:
+                rgba(255,255,255,0.17);
+
+        }
+
+
+        /* ========================= */
+        /* ИЗОБРАЖЕНИЕ В ОКНЕ */
+        /* ========================= */
+
+        .modal-image {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            max-height:
+                360px;
+
+            object-fit:
+                cover;
+
+            margin-bottom:
+                20px;
+
+            border-radius:
+                13px;
+
+            background:
+                #101923;
+
+        }
+
+
+        /* ========================= */
+        /* ЗАГОЛОВОК */
+        /* ========================= */
+
+        .modal-title {
+
+            display:
+                flex;
+
+            align-items:
+                baseline;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                22px;
+
+            padding-right:
+                45px;
+
+        }
+
+
+        .modal-title h2 {
+
+            margin:
+                0;
+
+            font-size:
+                1.8rem;
+
+        }
+
+
+        .modal-position {
+
+            color:
+                var(--accent-color);
+
+            font-size:
+                1.2rem;
+
+            font-weight:
+                800;
+
+        }
+
+
+        /* ========================= */
+        /* ИНФОРМАЦИЯ */
+        /* ========================= */
+
+        .modal-info-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap:
+                10px;
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .info-item {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                5px;
+
+            padding:
+                12px 14px;
+
+            background:
+                #172230;
+
+            border:
+                1px solid #2d3b4c;
+
+            border-radius:
+                10px;
+
+        }
+
+
+        .info-label {
+
+            color:
+                var(--muted-color);
+
+            font-size:
+                0.78rem;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                0.04em;
+
+        }
+
+
+        .info-value {
+
+            color:
+                white;
+
+            font-weight:
+                700;
+
+        }
+
+
+        /* ========================= */
+        /* РЕКОРДЫ */
+        /* ========================= */
+
+        .records-title {
+
+            margin-bottom:
+                10px;
+
+            color:
+                var(--muted-color);
+
+            font-size:
+                0.85rem;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                0.08em;
+
+        }
+
+
+        .records-list {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                7px;
+
+        }
+
+
+        .record {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                45px
+                minmax(120px,1fr)
+                70px
+                140px
+                95px
+                auto;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+
+            padding:
+                11px 12px;
+
+            background:
+                #172230;
+
+            border:
+                1px solid #2d3b4c;
+
+            border-radius:
+                9px;
+
+            font-size:
+                0.9rem;
+
+        }
+
+
+        .record-position {
+
+            color:
+                var(--muted-color);
+
+            font-weight:
+                700;
+
+        }
+
+
+        .record-player {
+
+            color:
+                white;
+
+            font-weight:
+                700;
+
+        }
+
+
+        .record-percent {
+
+            color:
+                var(--green-color);
+
+            font-weight:
+                800;
+
+        }
+
+
+        .record-attempts {
+
+            color:
+                #aab4c3;
+
+        }
+
+
+        .record-date {
+
+            color:
+                var(--muted-color);
+
+        }
+
+
+        .record-video {
+
+            color:
+                var(--accent-color);
+
+            font-weight:
+                700;
+
+            text-decoration:
+                none;
+
+        }
+
+
+        .record-video:hover {
+
+            text-decoration:
+                underline;
+
+        }
+
+
+        .no-records {
+
+            padding:
+                20px;
+
+            text-align:
+                center;
+
+            color:
+                var(--muted-color);
+
+            background:
+                #172230;
+
+            border:
+                1px solid #2d3b4c;
+
+            border-radius:
+                9px;
+
+        }
+
+
+        /* ========================= */
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        /* ========================= */
+
+        @media (max-width: 700px) {
+
+            .level-card {
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .level-image {
+
+                flex:
+                    0 0 145px;
+
+                width:
+                    145px;
+
+                height:
+                    82px;
+
+            }
+
+
+            .modal-info-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .record {
+
+                grid-template-columns:
+                    35px
+                    1fr
+                    65px;
+
+            }
+
+
+            .record-attempts,
+            .record-date,
+            .record-video {
+
+                grid-column:
+                    2 / 4;
+
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            body {
+
+                padding:
+                    18px 10px;
+
+            }
+
+
+            header h1 {
+
+                font-size:
+                    1.7rem;
+
+            }
+
+
+            nav {
+
+                flex-direction:
+                    column;
+
+            }
+
+
+            .level-card {
+
+                flex-direction:
+                    column;
+
+            }
+
+
+            .level-image {
+
+                width:
+                    100%;
+
+                height:
+                    auto;
+
+                aspect-ratio:
+                    16 / 9;
+
+            }
+
+
+            .level-info {
+
+                width:
+                    100%;
+
+            }
+
+
+            .name {
+
+                white-space:
+                    normal;
+
+            }
+
+
+            .level-modal {
+
+                padding:
+                    10px;
+
+            }
+
+
+            .level-modal-content {
+
+                padding:
+                    17px;
+
+                max-height:
+                    94vh;
+
+            }
+
+        }
+
+        .country-flag {
+            width: 24px;
+            height: 16px;
+            object-fit: cover;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            border-radius: 2px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <header>
+
+        <h1>
+            Hardest Puzotryas Level List
+        </h1>
+
+        <p id="list-subtitle">
+            Лошковый демонлист для одаренных людей
+        </p>
+
+    </header>
+
+
+    <nav>
+
+        <button
+            class="tab-btn active"
+            data-tab="main-top"
+        >
+            Главный топ
+        </button>
+
+
+        <button
+            class="tab-btn"
+            data-tab="future"
+        >
+            Будущие
+        </button>
+
+
+        <button
+            class="tab-btn"
+            data-tab="challenge"
+        >
+            Челленджи
+        </button>
+
+    </nav>
+
+
+    <main id="demon-list"></main>
+
+
+</div>
+
+
+<!-- ================================= -->
+<!-- ОКНО ПОДРОБНОЙ ИНФОРМАЦИИ -->
+<!-- ================================= -->
+
+<div
+    id="level-modal"
+    class="level-modal"
+>
+
+    <div
+        id="level-modal-content"
+        class="level-modal-content"
+    >
+
+        <!-- list.js вставит сюда информацию -->
+
+    </div>
+
+</div>
+
+
+<script src="list.js"></script>
+
+
+</body>
+
+</html>
