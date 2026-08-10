@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardest Verified Level List</title>
+    <style>
+        /* Общие стили страницы */
+        body {
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Описание списка */
+        .list-description {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .list-description .subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a855f7;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .list-description p {
+            margin: 0 auto;
+            max-width: 750px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #94a3b8;
+        }
+
+        /* Поле поиска */
+        .search-container {
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 25px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #131a26;
+            border: 1px solid #1f293d;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: #a855f7;
+            box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+        }
+
+        /* Контейнер для карточек */
+        .list-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Карточка уровня */
+        .level-card {
+            background-color: #111827;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #1f293d;
+            transition: background-color 0.2s, border-color 0.2s;
+            position: relative;
+        }
+
+        .level-card:hover {
+            background-color: #172033;
+            border-color: #3b82f6;
+        }
+
+        /* Превью */
+        .thumbnail-wrapper {
+            cursor: pointer;
+        }
+
+        .level-thumbnail {
+            width: 240px;
+            height: 125px;
+            border-radius: 8px;
+            object-fit: cover;
+            object-position: center;
+            background-color: #070a12;
+            display: block;
+        }
+
+        /* Информация */
+        .level-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .level-title-row {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .level-position {
+            color: #f59e0b;
+        }
+
+        .level-name {
+            color: #ffffff;
+        }
+
+        .level-creators {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .verifier {
+            color: #ec4899;
+            font-weight: 500;
+        }
+
+        /* Интерактивная плашка ID */
+        .level-id {
+            font-size: 13px;
+            color: #64748b;
+            cursor: pointer;
+            transition: color 0.2s;
+            user-select: none;
+            width: fit-content;
+        }
+
+        .level-id:hover {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+
+        /* Зеленая плашка NEW */
+        .badge-new {
+            background-color: #10b981;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Всплывающее уведомление (Toast) */
+        #toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+
+        #toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .no-results {
+            text-align: center;
+            color: #64748b;
+            font-size: 18px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hardest Verified Level List</h1>
+
+    <div class="list-description">
+        <div class="subtitle">Официальный реестр пиковой сложности</div>
+        <p>Проект создан для фиксации и структурирования сложнейших уровней, прошедших полную верификацию. Мы убрали хаос таблиц рекордов, чтобы оставить только чистую историю триумфов и наглядно показать, где находится настоящий предел человеческих возможностей.</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Поиск уровня по названию...">
+    </div>
+
+    <div class="list-container" id="listContainer"></div>
+
+    <div class="no-results" id="noResults">Ничего не найдено</div>
+
+    <!-- Всплывающее уведомление для копирования -->
+    <div id="toast">ID скопирован!</div>
+
+    <!-- Подключаем внешний файл уровней -->
+    <script src="levels.js"></script>
+
+    <script>
+        const listContainer = document.getElementById('listContainer');
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('noResults');
+
+        // Функция копирования ID
+        function copyId(id) {
+            navigator.clipboard.writeText(id.toString()).then(() => {
+                const toast = document.getElementById('toast');
+                toast.textContent = `ID ${id} скопирован!`;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2000);
+            });
+        }
+
+        // Ваша функция умной загрузки превью
+    function setBestThumbnail(imgElement, videoUrl) {
+        if (!videoUrl) {
+            imgElement.src = 'https://via.placeholder.com/220x140/2d3748/ffffff?text=No+Image';
+            return;
+        }
+
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = videoUrl.match(regExp);
+        
+        if (!match || match[2].length !== 11) {
+            imgElement.src = 'https://via.placeholder.com/220x140/2d3748/ffffff?text=No+Image';
+            return;
+        }
+        const videoId = match[2];
+
+        // Очередь проверки качества превью (от лучшего к худшему)
+        const qualities = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', 'default'];
+        let qualityIndex = 0;
+
+        function tryNextQuality() {
+            if (qualityIndex >= qualities.length) {
+                // Если все перепробовали, ставим финальную заглушку
+                imgElement.src = 'https://via.placeholder.com/220x140/2d3748/ffffff?text=No+Image';
+                return;
+            }
+
+            const testImg = new Image();
+            const currentUrl = `https://img.youtube.com/vi/${videoId}/${qualities[qualityIndex]}.jpg`;
+
+            testImg.onload = function() {
+                // КЛЮЧЕВОЕ РЕШЕНИЕ: проверяем реальный размер картинки.
+                // YouTube-заглушка с точками имеет ширину 120px.
+                // Настоящие превьюшки всегда больше 128px.
+                if (testImg.naturalWidth > 128 && testImg.naturalHeight > 96) {
+                    imgElement.src = currentUrl; // Нашли реальную картинку!
+                } else {
+                    qualityIndex++;
+                    tryNextQuality(); // Это была фейковая заглушка, пробуем следующее качество
+                }
+            };
+
+            testImg.onerror = function() {
+                qualityIndex++;
+                tryNextQuality(); // Ошибка сети, пробуем следующее качество
+            };
+
+            testImg.src = currentUrl;
+        }
+
+        tryNextQuality();
+    }
+
+        // Функция отрисовки списка
+        function renderList(levels) {
+            listContainer.innerHTML = ''; 
+
+            if (!levels || levels.length === 0) {
+                noResults.style.display = 'block';
+                return;
+            }
+            noResults.style.display = 'none';
+
+            levels.forEach((level, index) => {
+                const position = index + 1; 
+                const newBadgeHtml = level.isNew ? `<span class="badge-new">NEW</span>` : '';
+
+                const card = document.createElement('div');
+                card.className = 'level-card';
+                
+                card.innerHTML = `
+                    <div class="thumbnail-wrapper" onclick="window.open('${level.image}', '_blank')">
+                        <img class="level-thumbnail" id="thumb-${level.id}" alt="${level.name}">
+                    </div>
+                    <div class="level-info">
+                        <div class="level-title-row">
+                            <span class="level-position">#${position}</span>
+                            <span class="level-name">${level.name}</span>
+                            ${newBadgeHtml}
+                        </div>
+                        <div class="level-creators">
+                            ${level.author} | <span class="verifier">${level.difficulty}</span>
+                        </div>
+                        <div class="level-id" onclick="copyId(${level.id})">
+                            ID: ${level.id} 📋
+                        </div>
+                    </div>
+                `;
+                
+                listContainer.appendChild(card);
+
+                // Корректный вызов подбора картинок без лишних закрывающих скобок
+                const imgElement = document.getElementById(`thumb-${level.id}`);
+                setBestThumbnail(imgElement, level.image);
+            });
+        }
+
+        // Поиск строго по названию уровня
+        searchInput.addEventListener('input', function() {
+            const filterText = searchInput.value.toLowerCase();
+            
+            const filteredLevels = mainListData.filter(level => {
+                return level.name.toLowerCase().includes(filterText);
+            });
+
+            renderList(filteredLevels);
+        });
+
+        // Запуск при загрузке страницы
+        if (typeof mainListData !== 'undefined') {
+            renderList(mainListData);
+        } else {
+            noResults.textContent = "Ошибка: Файл levels.js не найден.";
+            noResults.style.display = 'block';
+        }
+    </script>
