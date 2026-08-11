@@ -96,7 +96,139 @@ const puzotryasList = [
             {
                 player: "kenoqhobia",
                 percent: 100,
-                attempts: 2000,
+                attempts: 3000,
+                date: "",
+                video: ""
+            }
+
+        ]
+
+    },
+
+    {
+        name: "Poltergeist",
+        creator: "Andromeda GMD",
+        verifier: "kenoqhobia",
+        originalDifficulty: "Insane Demon",
+        hpllDifficulty: "Insane Demon",
+        category: "main-top",
+        image: "images/poltergeist.jpg",
+
+        records: [
+            {
+                player: "kenoqhobia",
+                percent: 100,
+                attempts: 2500,
+                date: "",
+                video: ""
+            }
+
+        ]
+
+    },
+
+    {
+        name: "Fairydust",
+        creator: "mkComic",
+        verifier: "kenoqhobia",
+        originalDifficulty: "Hard Demon",
+        hpllDifficulty: "Hard Demon",
+        category: "main-top",
+        image: "images/fairydust.png",
+
+        records: [
+            {
+                player: "kenoqhobia",
+                percent: 100,
+                attempts: 1400,
+                date: "",
+                video: ""
+            }
+
+        ]
+
+    },
+
+    {
+        name: "Silhouette",
+        creator: "Havok",
+        verifier: "kenoqhobia",
+        originalDifficulty: "Hard Demon",
+        hpllDifficulty: "Hard Demon",
+        category: "main-top",
+        image: "images/silhouette.png",
+
+        records: [
+            {
+                player: "kenoqhobia",
+                percent: 100,
+                attempts: 1000,
+                date: "",
+                video: ""
+            }
+
+        ]
+
+    },
+
+    {
+        name: "Sharp Minor",
+        creator: "Giron",
+        verifier: "kenoqhobia",
+        originalDifficulty: "Hard Demon",
+        hpllDifficulty: "Hard Demon",
+        category: "main-top",
+        image: "images/sharp_minor.png",
+
+        records: [
+            {
+                player: "kenoqhobia",
+                percent: 100,
+                attempts: 950,
+                date: "",
+                video: ""
+            }
+
+        ]
+
+    },
+
+    {
+        name: "Nine Circles",
+        creator: "Zobros",
+        verifier: "kenoqhobia",
+        originalDifficulty: "Hard Demon",
+        hpllDifficulty: "Hard Demon",
+        category: "main-top",
+        image: "images/nine_circles.png",
+
+        records: [
+            {
+                player: "kenoqhobia",
+                percent: 100,
+                attempts: 790,
+                date: "",
+                video: ""
+            }
+
+        ]
+
+    },
+
+    {
+        name: "Jawbreaker",
+        creator: "ZenthicAlpha",
+        verifier: "kenoqhobia",
+        originalDifficulty: "Hard Demon",
+        hpllDifficulty: "Hard Demon",
+        category: "main-top",
+        image: "images/jawbreaker.png",
+
+        records: [
+            {
+                player: "kenoqhobia",
+                percent: 100,
+                attempts: 750,
                 date: "",
                 video: ""
             }
@@ -333,45 +465,6 @@ const puzotryasList = [
 
     },
 
-
-    {
-
-        name: "Chungus Corridor",
-
-        creator: "BellyTeam",
-
-        verifier: "Brother 2",
-
-        originalDifficulty: "Insane Demon",
-
-        hpllDifficulty: "Hard Demon",
-
-        category: "main-top",
-
-        image: "",
-
-
-        records: [
-
-            {
-
-                player: "Brother 2",
-
-                percent: 100,
-
-                attempts: 6402,
-
-                date: "02.08.2026",
-
-                video: ""
-
-            }
-
-        ]
-
-    },
-
-
     {
 
         name: "Heavyweight Step",
@@ -443,7 +536,7 @@ const puzotryasList = [
 const tabInfo = {
 
     "main-top":
-        "Лошковый демонлист для одаренных людей",
+        "Лошковый левеллист для одаренных людей",
 
     "future":
         "Будущие уровни",
