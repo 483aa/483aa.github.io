@@ -1,55 +1,181 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Creepypasta Archive</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: 'Courier New', monospace;
+      background: #000; color: #b0b0b0; min-height: 100vh;
+      position: relative;
+    }
+    /* Полупрозрачный белый шум поверх фона */
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      opacity: .07;
+      animation: grain .4s steps(4) infinite;
+    }
+    @keyframes grain {
+      0% { transform: translate(0,0); } 25% { transform: translate(-4px,2px); }
+      50% { transform: translate(3px,-3px); } 75% { transform: translate(-2px,-2px); }
+      100% { transform: translate(2px,3px); }
+    }
+    header, main { position: relative; z-index: 1; }
+    header {
+      text-align: center; padding: 30px 20px 20px;
+      border-bottom: 1px solid #3a0000;
+    }
+    h1 {
+      margin: 0; color: #b30000; font-size: 2.2em; letter-spacing: 4px;
+      text-transform: uppercase; text-shadow: 0 0 10px #500;
+      animation: flicker 5s infinite;
+    }
+    @keyframes flicker {
+      0%,18%,22%,78%,100% { opacity: 1; } 20% { opacity: .3; }
+    }
+    .info-btn {
+      position: absolute; top: 18px; right: 20px;
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid #b30000; background: #000; color: #b30000;
+      cursor: pointer; font-size: 15px;
+    }
+    .info-btn:hover { background: #b30000; color: #000; }
+    .info-panel {
+      display: none; max-width: 560px; margin: 14px auto 0;
+      padding: 12px 16px; font-size: .85em; color: #8a8a8a;
+      background: rgba(0,0,0,.75); border: 1px solid #3a0000;
+    }
+    .info-panel.open { display: block; }
+    /* Фильтры в указанном порядке: Type, Loader, Style, Year */
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      padding: 18px; margin: 22px auto; max-width: 1000px;
+      border: 1px solid #2a0000; background: rgba(0,0,0,.6);
+    }
+    select, .filters button {
+      padding: 8px 10px; background: #050505; color: #9a9a9a;
+      border: 1px solid #3a0000; cursor: pointer; font-family: inherit;
+    }
+    select:hover, .filters button:hover { border-color: #b30000; color: #d0d0d0; }
+    .version-list {
+      display: grid; gap: 18px; max-width: 1000px; margin: 0 auto 50px;
+      padding: 0 20px; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+    }
+    .version-item {
+      padding: 16px; background: rgba(5,5,5,.85); border: 1px solid #2a0000;
+      transition: .3s;
+    }
+    /* main.html — фрагмент стилей для таблицы фильтров */
+/* main.html: стили фильтров */
+.filters {
+  max-width: 1000px; margin: 22px auto; padding: 18px;
+  background: rgba(5,5,5,.7); border: 1px solid #2a0000;
+  position: relative; z-index: 1;
+}
+.filters-top {
+  display: flex; gap: 10px; margin-bottom: 16px; align-items: center;
+}
+.search-wrap { flex: 1; position: relative; }
+.search-wrap::before {
+  content: "⌕"; position: absolute; left: 10px; top: 50%;
+  transform: translateY(-50%); color: #b30000; font-size: 1.1em;
+}
+#search {
+  width: 100%; padding: 9px 12px 9px 32px;
+  background: #050505; color: #c0c0c0;
+  border: 1px solid #3a0000; font-family: inherit; font-size: .9em;
+}
+#search:focus { outline: none; border-color: #b30000; }
+#reset-btn {
+  padding: 9px 16px; background: #050505; color: #b30000;
+  border: 1px solid #b30000; cursor: pointer; font-family: inherit;
+  text-transform: uppercase; letter-spacing: 1px; font-size: .8em;
+}
+#reset-btn:hover { background: #b30000; color: #000; }
 
-    <link rel="stylesheet" href="style.css">
-    <body>
-        <div class="bg1">
-        <div class="bg">
-        <div class="text">
-            <p align="center" id="main">Minecraft Creepypasta Versions Versions</p>
-            <p id="main2">Archive:</p>
-            <a href="download/rd-000000.zip" id="main2">rd-000000</a>
-            <a href="download/Alpha 0.0.0.zip" id="main2">Alpha 0.0.0</a>
-            <a href="download/Alpha 1.0.0.zip" id="main2">Alpha 1.0.0</a>
-            <a href="download/Alpha 1.0.3_02.zip" id="main2">Alpha 1.0.3_02</a>
-            <a href="download/Alpha 1.0.3_02 upd-2.zip" id="main2">Alpha 1.0.3_02 upd-2</a>
-            <a href="download/Alpha 1.0.3_02 remastered.zip" id="main2">Alpha 1.0.3_02 remastered</a>
-            <a href="download/Mei139.zip" id="main2">Alpha 1.0.9 Free (Minecraft Mei139)</a>
-            <a href="download/Alpha 1.0.16_02.zip" id="main2">Alpha 1.0.16_02</a>
-            <a href="download/Alpha 1.0.16_02 remnastered.zip" id="main2">Alpha 1.0.16_02 remastered</a>
-            <a href="download/Alpha 1.0.16_03.zip" id="main2">Alpha 1.0.16_03</a>
-            <a href="download/Alpha 1.1.1x.zip" id="main2">Alpha 1.1.1x</a>
-            <a href="download/Alpha 1.1.2_01.zip" id="main2">Alpha 1.1.2_01</a>
-            <a href="download/Alpha 1.1.2_02.zip" id="main2">Alpha 1.1.2_02</a>
-            <a href="download/Alpha 1.1.3.zip" id="main2">Alpha 1.1.3</a>
-            <a href="download/Alpha 1.2.3b.zip" id="main2">Alpha 1.2.3b</a>
-            <a href="download/Alpha 1.2.3_03.zip" id="main2">Alpha 1.2.3_03</a>
-            <a href="download/ERROR126.zip" id="main2">Alpha 1.2.3_03 chinese (ERROR126)</a>
-            <a href="download/Alpha 1.2.3_03 remastered.zip" id="main2">Alpha 1.2.3_03 remastered</a>
-            <a href="download/Alpha 1.2.3_03 reloaded.zip" id="main2">Alpha 1.2.3_03 reloaded</a>
-            <a href="download/Alpha 1.2.3_06.zip" id="main2">Alpha 1.2.3_06</a>
-            <a href="download/Alpha 1.2.3_06_1.zip" id="main2">Alpha 1.2.3_06_1</a>
-            <a href="download/Alpha 1.2.3_0X.zip" id="main2">Alpha 1.2.3_0X</a>
-            <a href="download/Alpha 1.2.4.zip" id="main2">Alpha 1.2.4</a>
-            <a href="download/Alpha 1.2.6_01.zip" id="main2">Alpha 1.2.6_01</a>
-            <a href="download/Alpha 1.2.6_02.zip" id="main2">Alpha 1.2.6_02</a>
-            <a href="download/Alpha 1.2.6_03.zip" id="main2">Alpha 1.2.6_03</a>
-            <a href="download/Alpha 1.2.6_04.zip" id="main2">Alpha 1.2.6_04</a>
-            <a href="download/Alpha 1.2.6_04 smile.zip" id="main2">Alpha 1.2.6_04 :)</a>
-            <a href="download/Alpha 1.2.6_05.zip" id="main2">Alpha 1.2.6_05</a>
-            <a href="download/Alpha 1.2.6_06.zip" id="main2">Alpha 1.2.6_06</a>
-            <a href="download/Alpha 1.2.7.zip" id="main2">Alpha 1.2.7</a>
-            <a href="download/Alpha 1.3 TESTIFICATE.zip" id="main2">Alpha 1.3 TESTIFICATE</a>
-            <a href="download/Alpha 1.3.8.zip" id="main2">Alpha 1.3.8</a>
-            <a href="download/Alpha 3.0.3.zip" id="main2">Alpha 3.0.3</a>
-            <a href="download/Alpha 666.exe.zip" id="main2">Alpha 666.exe</a>
-            <a href="download/Alpha D3ATH.exe.zip" id="main2">Alpha D3ATH.exe</a>
-            <a href="download/Alpha D3ATH.exe remastered.zip" id="main2">Alpha D3ATH.exe remastered</a>
-            <a href="download/Alpha E.R.R.O.R.zip" id="main2">Alpha E.R.R.O.R</a>
-            <a href="download/Alpha Herobrine Test.zip" id="main2">Alpha Herobrine Test</a>
-            <a href="download/Alpha Nothcom.mne.zip" id="main2">Alpha Nothcom.mne</a>
-            <a href="download/Alpha Pid.zip" id="main2">Alpha Pi###</a>
-            <a href="download/Mncatapav..ierf lh 126.zip" id="main2">Mncatapav..ierf lh 126</a>
-        </div>
-        </div>
-        </div>
-    </body>
+.filter-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+}
+.filter-col h3 {
+  margin: 0 0 8px; font-size: .75em; text-transform: uppercase;
+  letter-spacing: 2px; color: #b30000; font-weight: normal;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 4px 10px; font-size: .78em; font-family: inherit;
+  background: transparent; color: #8a8a8a;
+  border: 1px solid #2a0000; cursor: pointer;
+  transition: .15s; border-radius: 2px;
+}
+.chip:hover { border-color: #800000; color: #c0c0c0; }
+.chip.on {
+  background: #b30000; color: #000; border-color: #b30000;
+  font-weight: bold;
+}
+@media (max-width: 720px) {
+  .filter-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.version-item:hover { border-color: #b30000; box-shadow: 0 0 12px rgba(120,0,0,.6); }
+.version-item h2 { color: #b30000; font-size: 1.15em; margin: 0 0 8px; }
+.version-item p { color: #666; font-size: .82em; }
+.version-item a {
+  display: inline-block; margin-top: 8px; padding: 7px 13px;
+  color: #b30000; border: 1px solid #b30000; text-decoration: none;
+  font-weight: bold;
+}
+.version-item a:hover { background: #b30000; color: #000; }
+.creepy { border-color: #500; }
+.error { background: rgba(40,0,0,.9); border-color: #a03000; }
+.chinese, .pseudo-chinese { border-color: #400; }
+.empty { text-align: center; color: #b30000; grid-column: 1/-1; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Minecraft Creepypasta Archive</h1>
+    <button id="info-btn" class="info-btn">?</button>
+    <div id="info-panel" class="info-panel">
+      <p><b>Filters:</b> <br>Type identifies the versions they were based on (Alpha/Beta/Release/Snapshot),<br> Loader identifies versions by launching it (BAT/JAR/EXE/MultiMC/Launcher),<br> Style identifies versions by launching it (Normal/Creepy/Error/Chinese/Pseudo-Chinese),<br> Year identifies versions by the year of their release (2010, 2015, 2019–2026).</p>
+    </div>
+  </header>
+  <main>
+    <!-- Порядок фильтров: Type, Loader, Style, Year -->
+    <!-- main.html: секция фильтров -->
+<div class="filters">
+  <div class="filters-top">
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Search versions...">
+    </div>
+    <button id="reset-btn">Reset</button>
+  </div>
+  <div class="filter-grid">
+    <div class="filter-col">
+      <h3>Type</h3>
+      <div id="col-type" class="chips"></div>
+    </div>
+    <div class="filter-col">
+      <h3>Loader</h3>
+      <div id="col-loader" class="chips"></div>
+    </div>
+    <div class="filter-col">
+      <h3>Style</h3>
+      <div id="col-style" class="chips"></div>
+    </div>
+    <div class="filter-col">
+      <h3>Year</h3>
+      <div id="col-year" class="chips"></div>
+    </div>
+  </div>
+</div>
+
+    <div id="version-list" class="version-list"></div>
+  </main>
+  <script src="versions.js"></script>
+  <script>
+    document.getElementById('info-btn').onclick = () =>
+      document.getElementById('info-panel').classList.toggle('open');
+  </script>
+</body>
 </html>
