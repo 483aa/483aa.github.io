@@ -1,9 +1,33 @@
+const TYPE_LABELS = {
+  alpha:   "Alpha",
+  beta:    "Beta",
+  release: "Release",
+  other:   "Other",
+  error:   "Error",
+  test:    "Test",
+};
+
+const LOADER_LABELS = {
+  jar:      ".JAR",
+  bat:      ".BAT",
+  exe:      ".EXE",
+  multimc:  "MultiMC",
+  launcher: "Launcher",
+};
+
+const STYLE_LABELS = {
+  default:       "Default",
+  creepy:        "Creepy",
+  chinese:       "Chinese",
+  pseudochinese: "Pseudo-Chinese",
+};
+
 const versions = [
-  { name:"Alpha v1.0.16_02", type:"alpha", loader:"bat", style:"normal", year:2010, zip:"downloads/a1.0.16_02.zip"}, // 13.08.2010
+  { name:"Alpha v1.0.16_02", type:"alpha", loader:"bat", style:"normal", year:2010, zip:"https://download851.mediafire.com/leo48lygq3ag_DMEixfFmINixyqlp1Yu5vLjSuIwRwgGuBfnYVH8YKZM5lE1jJo0dnMg0cCrdxuAoWwsQqHI23BC0FxSYvhdL_ehGlaRQvLNWk0ySrxHd5oNucRhZHIQ0ta6Zl5Lwjl4r5VoFxOqTeQORRh8hZYih1YojKe3JieYvFA/6hec64fwt468ifw/a1.0.16_02.zip"}, // 13.08.2010
 
-  { name:"Alpha v1.1.1", type:"alpha", loader:"launcher", style:"normal", year:2010, zip:"downloads/a1.1.1.zip"}, // 18.09.2010
+  { name:"Alpha v1.1.1", type:"alpha", loader:"bat", style:"normal", year:2010, zip:"https://download1590.mediafire.com/qq2tnkyil5ogH8ibTTBTjGx0wv8CmfVwotN6WD534VhqnN2chH2GZwlnh4sqT3XwIB4g1-9WBPlvmcMYP_biPOT94BJoENGGG3AiKpX7d2_8CMMrI1YWwkfxvKapVsbDclkDFGhET5VkIRuLGIr_nLrkRdxpKe5q7m2AMg_uZNt7KOY/adm8qigfz9ljoxo/a1.1.1.zip"}, // 18.09.2010
 
-  { name:"Alpha v1.1.1x", type:"alpha", loader:"launcher", style:"normal", year:2010, zip:"downloads/a1.1.1x.zip"}, // 18.09.2010
+  { name:"Alpha v1.1.1x", type:"alpha", loader:"launcher", style:"creepy", year:2010, zip:"https://download1338.mediafire.com/wlqlphgsxp6gkG6dLD5PMwnybZYmBddydLHr74XihzCKpR75a11rZ-XTb7cHqhD9RPf3mWgc-sgjdBp4q9mdJCu_RsgPk2xwaYpDBQ1VYonBkYXosCJbMIsX49fnASCV8QdGwDiuabNN0GEgYzzzhO304TMQf9AQ1B7mmhqOGtAd0rE/ysflz53wsbv5m0u/a1.1.1x.zip"}, // 18.09.2010
 
   { name:"Minecraft 1.1", type:"release", loader:"launcher", style:"normal", year:2012, zip:"downloads/1.1.zip" }, //12.01.2012
 
@@ -23,7 +47,7 @@ const versions = [
 
    { name:"Minecraft 6.6.6", type:"release", loader:"bat", style:"creepy", year:2020, zip:"downloads/6.6.6.zip" }, //07.03.2020
 
-  { name:"Alpha v0.0.0", type:"alpha", loader:"bat", style:"creepy", year:2020, zip:"downloads/a0.0.0.zip" }, //02.04.2020
+  { name:"Alpha v0.0.0", type:"alpha", loader:"bat", style:"creepy", year:2020, zip:"https://download1532.mediafire.com/768a13d7iokgDEVhR5q1Lnts65ScYVZKb0mKVGlibfOr683d-zX1DeG3u2ehmC2BhM5e9UN8G8G0LXJy9Hhx0j7bGdkWmstKnrh27aOm0DON5MjaSxsVYiFPoBpk2RXKGHETvlZMGs5Ud2UKQjrCRKuEZx86KMlFWyGYckUV5yUFXdk/8yf23hpd1ret0i4/a0.0.0.zip" }, //02.04.2020
 
   { name:"Alpha v1.2.6_02", type:"alpha", loader:"bat", style:"creepy", year:2020, zip:"downloads/a1.2.6_02.zip" }, //10.04.2020
 
@@ -103,7 +127,7 @@ const versions = [
 
   { name:"ERROR437_05", type:"release", loader:"exe", style:"chinese", year:2021, zip:"downloads/err437_05.zip" }, //08.12.2021
 
-  { name:"Alpha v1.1.2_01", type:"alpha", loader:"bat", style:"creepy", year:2021, zip:"downloads/a1.1.2_01.zip" }, //12.12.2021
+  { name:"Alpha v1.1.2_01", type:"alpha", loader:"bat", style:"creepy", year:2021, zip:"https://download946.mediafire.com/e7ukwmlbv6igSieIE01juearzMrJvMxNre7QpPKPqFLGICWC_OD7j0swUYtJkNrIeoQ_j6qOnZfg6GtC-JoBDW6VHrDO8OOmG1Pd7BJsZi-KfhF1NVGfpruzVA-mfSPUE-UJrQ-tA0aohn961a1TFgaXXgjwrJjVxMjA-OBR9eYWmoQ/kio873mfloks5wh/a1.1.2_01.zip" }, //12.12.2021
 
   { name:"Alpha D3ATH.exe remastered", type:"alpha", loader:"bat", style:"creepy", year:2021, zip:"downloads/d3ath.exe remastered.zip" }, //12.12.2021
 
@@ -115,9 +139,9 @@ const versions = [
 
   { name:"Beta 1.2_02", type:"beta", loader:"bat", style:"normal", year:2021, zip:"downloads/b1.2_02.zip" }, //27.12.2021
 
-  { name:"Alpha v1.0.3_02", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"downloads/a1.0.3_02.zip" }, //29.12.2021
+  { name:"Alpha v1.0.3_02", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"https://download1584.mediafire.com/qu3upfeo3fzgZMMJujDeUxttYhDUotl7pUZPKCOqZELQhx2qNfZx2VodNWFsQPqbA8ZPWg71BTrkC1l0HGM-43kApWvSymVKFy4d7ozUzEn-jx0E1WEwjFwQLlauaTOkZcvPQVqTKonsh_1CJyGPMZiKjApq_z4tyWAkA7zVZ5Q4OqU/nr011mvro5n64zd/a1.0.3_02.zip" }, //29.12.2021
 
-  { name:"Alpha v1.0.3_02 upd-2", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"downloads/a1.0.3_02-2.zip" }, //29.12.2021
+  { name:"Alpha v1.0.3_02 upd-2", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"https://download1326.mediafire.com/ow834c9ureqguXT6VzI9t3mNiAEBpNpZ3TF-YcWZxUNbNdxi-r2M1iMih5ydkeskQ6_BJMG2OmIydLImwAi0wFB54wt8LshmYQBsTzSsgvEUY4rgwwhCwENSB6Gmni-5CAtOJIpGYVejf-bo7amrMgle_P0Vk8XYmLN4jwewB_A3BCA/so4j1guxhm5roju/a1.0.3_02+upd-2.zip" }, //29.12.2021
 
   { name:"Minecraft Unknown", type:"release", loader:"bat", style:"chinese", year:2021, zip:"downloads/a1.0.3_02-2.zip" }, //29.12.2021
 
@@ -133,7 +157,7 @@ const versions = [
 
   { name:"Beta 1.7.x", type:"beta", loader:"bat", style:"creepy", year:2022, zip:"downloads/b1.7.x.zip" }, //27.02.2022
 
-  { name:"Alpha v1.0.16_02 remastered", type:"alpha", loader:"bat", style:"chinese", year:2022, zip:"downloads/a1.0.16_02 remastered.zip" }, //02.03.2022
+  { name:"Alpha v1.0.16_02 remastered", type:"alpha", loader:"bat", style:"chinese", year:2022, zip:"https://download850.mediafire.com/ho3kdi8q1xagAXjjUbyE-JZqvxX42DkwHDTFYF5_5_j0N47f3rCI3BaUqNQ7w4KHwcDzLxO6eAI6im1l0OISlSOqe6k8PxyjWU6xfLfzal2wEvJvGFH34kHp5BvTz_iWlbKfGDL4t7kT560USS7bzr4KgCRVYNCxfMHow5P_a0xMa1w/fps1gyf6w6ipef0/a1.0.16_02+remastered.zip" }, //02.03.2022
 
   { name:"Beta 1.5.1", type:"beta", loader:"bat", style:"normal", year:2022, zip:"downloads/b1.5.1.zip" }, //05.03.2022
 
@@ -195,7 +219,7 @@ const versions = [
 
   { name:"ERROR391_can", type:"beta", loader:"jar", style:"error", year:2022, zip:"downloads/err391_can.zip" }, //05.12.2022
 
-  { name:"Minecraft 4.0.4.exe", type:"release", loader:"exe", style:"error", year:2022, zip:"downloads/4.0.4.exe.zip" }, //06.12.2022
+  { name:"Minecraft 404.exe", type:"release", loader:"exe", style:"error", year:2022, zip:"downloads/4.0.4.exe.zip" }, //06.12.2022
 
   { name:"ERROR391_p1", type:"beta", loader:"jar", style:"pseudochinese", year:2022, zip:"downloads/err391_p1.zip" }, //07.12.2022
 
@@ -211,25 +235,25 @@ const versions = [
 
   { name:"ERROR391_0_1", type:"beta", loader:"exe", style:"error", year:2022, zip:"downloads/err391_0_1.zip" }, //27.12.2022
 
-  { name:"Alpha v1.2.0_03", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.2.0_03.zip" }, //03.01.2023
+  { name:"Alpha v1.2.0_03", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"https://download1585.mediafire.com/5nh2w1y9abigJ1wPGCBnJ6eWZHCMiFtVwzfkQTmnwkSTDjxMs6AEZhY3IJpuNpaX5hNlMGNQ2KU3yPPGfiruynQJk3m1ecPPqs4ZqTpbRFjLTOT2Tcuc6pPGVxJ1-WuAk0LnJlLxYGa7NF_WETaOqxALCmcGNIDzZkLxtY2jjJygEr4/y4jszm9o4k5g7w1/a1.2.0_03.zip" }, //03.01.2023
 
   { name:"Alpha v1.2.8 (ROO)", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.2.8 roo.zip" }, //03.01.2023
 
   { name:"Alpha v1.2.6_05", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.2.6_05=2.zip" }, //03.04.2023
 
-  { name:"Alpha v0.0.1", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a0.0.1.zip" }, //15.01.2023
+  { name:"Alpha v0.0.1", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"https://download1650.mediafire.com/6hml2hhikrdgljBSLCs0m_thYQwfgyt_QjAJkPWy7enzCTncSG1JR1UTy1SVqimyqQ8lE9i7PolddJrMIwtmwrw1WSNu5ikLErKTVoLwNXGv07m49oLb1S43f3DZhzahGz_d4nUQAOO5hxZur7dbXTqA-s0FKYqidoH79kmtABmb8QE/zgpaok4kvwht8d3/a0.0.1.zip" }, //15.01.2023
 
-  { name:"Alpha v1.0.16_03", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.0.16_03.zip" }, //16.01.2023
+  { name:"Alpha v1.0.16_03 (chaos test)", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"https://download1584.mediafire.com/n9spbs7qbjcgYzwhgpCVdlXDjU4jqY-KEq1-4IyFvgdOIHQPfl2vyiAYWN5gudL66fmz5c_eK72kuhBa7ZMeMl2-56BrHkiJFp4MIBJTx4IYwVbTbX-iS3Az2ytoWJqiMUJ-IFMbJNMrb30nSMbpMVt9ECMDjX0grSUtJLxvyAND0zI/v2gqpj9qpszbvpk/a1.0.16_03.zip" }, //16.01.2023
 
   { name:"ERROR14827", type:"alpha", loader:"bat", style:"error", year:2023, zip:"downloads/err14827.zip" }, //17.01.2023
 
   { name:"Minecraft 1.7.20", type:"release", loader:"exe", style:"error", year:2023, zip:"downloads/1.7.20.zip" }, //21.01.2023
 
-  { name:"Alpha v1.0.17_04", type:"release", loader:"bat", style:"normal", year:2023, zip:"downloads/a1.0.17_04.zip" }, //29.01.2023
+  { name:"Alpha v1.0.17_04", type:"release", loader:"bat", style:"normal", year:2023, zip:"https://download1334.mediafire.com/yahsodcs56igXOPQR_tsXXpbp9mAtbA3Gqx2cdXEFChRfqXoXYL9rZKdk38zdb8jc-MMKgeSsDv0u54WsFBMCuiHyNiwoVDNGdxthsxg4vqaqg4pkhL5MouhZbzOBta3qXwQPYS4JS2Jm4atErwInUTBd1cux3VCH89zNFxvI-AqauA/pujq1smx375t502/a1.0.17_04.zip" }, //29.01.2023
 
   { name:"UNDEFINE 2", type:"release", loader:"bat", style:"chinese", year:2023, zip:"downloads/undefine 2.zip" }, //05.02.2023
 
-  { name:"Alpha v1.1.3", type:"alpha", loader:"launcher", style:"normal", year:2023, zip:"downloads/a1.1.3.zip" }, //19.02.2023
+  { name:"Alpha v1.1.3", type:"alpha", loader:"launcher", style:"normal", year:2023, zip:"https://download1323.mediafire.com/rwqftkoorqdgp69C41adotlqL0QzbMYEzgJLkIm3ZRENkdJxTfsXBW-vG8eLWiqw22UPa_wviuHXX0k8nFHYQSeTpEBAMiqjgnWYGsifsusdl-PZybJJsFZ1ms-oVFxEZq9SPbYvocondhHtA-3kpVs-EFgI3i9yRlZF93B2pzo3Fx8/vca3z9agfi1m87z/a1.1.3.zip" }, //19.02.2023
 
   { name:"Delta v0.0.0 v2", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/delta0.0.0v2.zip" }, //19.02.2023
 
@@ -245,7 +269,7 @@ const versions = [
 
   { name:"Beta 1.0-bt ", type:"beta", loader:"bat", style:"normal", year:2023, zip:"downloads/b1.0-bt.zip" }, //29.03.2023
 
-  { name:"Alpha v1.0.3_02 remastered", type:"alpha", loader:"bat", style:"normal", year:2023, zip:"downloads/a1.0.3_02 remastered.zip" }, //01.04.2023
+  { name:"Alpha v1.0.3_02 remastered", type:"alpha", loader:"bat", style:"normal", year:2023, zip:"https://download943.mediafire.com/ofnlbewsx5dgFJTISS4QSMpXTccWkmrCGxS7SyOGcFe1b_wjXgdL5DxrNA8k8ppCg2c-eC_7G7OMbFCCClazzpILoWOce9N4NugFKXIT0LXllfEWquc9WXq8zptJbLozjvK72NxH-CVGk_TQ9bEmR7aWsiXGFxMuv4WNFtgcZDNghZo/vemlzmueucm4252/a1.0.3_02+remastered.zip" }, //01.04.2023
 
   { name:"True Blue v1.0.0", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/tb1.0.0.zip" }, //12.04.2023
 
@@ -285,7 +309,7 @@ const versions = [
 
   { name:"Alpha v1.2.6_06", type:"alpha", loader:"exe", style:"chinese", year:2023, zip:"downloads/a1.2.6_06.zip" }, //01.11.2023
 
-  { name:"Alpha v1.0.14 Reissue", type:"alpha", loader:"bat", style:"normal", year:2023, zip:"downloads/a1.0.14 reissue.zip" }, //05.11.2023
+  { name:"Alpha v1.0.14 Reissue", type:"alpha", loader:"bat", style:"normal", year:2023, zip:"https://download1323.mediafire.com/fqjbpl0dq3dgr-qyJko2QLBT5DGFbjivwocMx79eAZ_4-2cUzifmdmdUMMC9luRrIevDhP9wI1XNbq-l4iZAiCdxTfDJU2402UbVc_oxPxytzX3lGu4elItaXJSaHHBlkcgqgwWbcnKjPyaBsELOAP3deetcyc8-r9jttT1JdmoJIDg/y9pcslqfbqjhfmy/a1.0.14+reissue.zip" }, //05.11.2023
 
   { name:"Beta 1.8.3 chinese edition", type:"beta", loader:"jar", style:"pseudochinese", year:2023, zip:"downloads/b1.8.3 chinese edition.zip" }, //19.11.2023
 
@@ -319,7 +343,7 @@ const versions = [
 
   { name:"Beta 1.3_01 (Minecraft ororaaaй)", type:"beta", loader:"bat", style:"normal", year:2024, zip:"downloads/b1.3_01.zip" }, //12.03.2024
 
-  { name:"Alpha v1.1.2_02", type:"alpha", loader:"bat", style:"normal", year:2024, zip:"downloads/a1.1.2_02.zip" }, //15.03.2024
+  { name:"Alpha v1.1.2_02", type:"alpha", loader:"bat", style:"normal", year:2024, zip:"https://download1591.mediafire.com/5sh5ag2zm37g_SqOg2amyyssLkrU4oMSwU8ZK0xFYAZtn1lWJrCK98ISJLOXS80qN4K8c8znTOIPd3GWBec89QgwT3HEYK46txMPG-gGuvqqrV6GmcG2PtsByPDYj_tdrJlgDLRbxl-HDwaSuhuCYzlGjGghktmv2fGi28LJ7sIeK5M/av37u5oo22i3ffn/a1.1.2_02.zip" }, //15.03.2024
 
   { name:"Minecraft 00w00a upd-2", type:"snapshot", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/00w00a-3.zip" }, //18.03.2024
 
@@ -329,7 +353,7 @@ const versions = [
 
   { name:"Beta 1.1 Test Build 1", type:"beta", loader:"bat", style:"normal", year:2024, zip:"downloads/b1.1-tb1.zip" }, //23.03.2024
 
-  { name:"Alpha v1.0.9 Free (Mei139)", type:"alpha", loader:"bat", style:"creepy", year:2024, zip:"downloads/mei139.zip" }, //25.03.2024
+  { name:"Alpha v1.0.9 Free (Mei139)", type:"alpha", loader:"bat", style:"creepy", year:2024, zip:"https://download1078.mediafire.com/q5myfowvsnngxW-RjCvu_NXc5Dpcf6BwmfPPSTNlNQF4oDTJjrpYI1oUHtN7tgEtWZt6CTNxWwKmzOnsxEoXMZo03YeDKxa0uoLfJmv4d6STWbEoHSyGtAK9nObjWeI3h85s0jxH0eiM48vFvaG-sOs9R2YIgP-qT2yBEENjHptz620/h0id8wov5rhau3e/a1.0.9+free+%28mei139%29.zip" }, //25.03.2024
 
   { name:"ANYA520_3 (Minecraft.TheEndIsNear v3)", type:"release", loader:"exe", style:"pseudochinese", year:2024, zip:"downloads/anya520_3.zip" }, //28.03.2024
 
@@ -445,15 +469,15 @@ const versions = [
 
   { name:"True Blue v1.2.0", type:"alpha", loader:"bat", style:"creepy", year:2024, zip:"downloads/tb1.2.0.zip" }, //20.10.2024
 
-  { name:"Alpha v1.0.6_02", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"downloads/a1.0.6_02.zip" }, //02.01.2025
+  { name:"Alpha v1.0.6_02", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"https://download853.mediafire.com/3lly7h1uz22gc0lSG_FVDWmPABBWuh7zNTrK5vFIbTQsZJCDytkguYxzmSDFryLo_6O9DFxQnwMno10IvZGIZXk0kbVhfUTsGdWqv1kydp4LTM2YBygYvDKgkanFhvRJqo-z5pF_ATMStHz6-6Xj4ZQ3fyhhmsssJpIjrxo0U-5jc1c/z1eb2j8g81aqhen/a1.0.6_02.zip" }, //02.01.2025
 
   { name:"Beta 1.7.5 (ERROR175)", type:"beta", loader:"bat", style:"creepy", year:2025, zip:"downloads/b1.7.5.zip" }, //16.03.2025
 
   { name:"Beta 1.8_01", type:"beta", loader:"bat", style:"normal", year:2025, zip:"downloads/b1.8_01.zip" }, //18.03.2025
 
-  { name:"Alpha v1.1.1_01", type:"alpha", loader:"bat", style:"error", year:2025, zip:"downloads/a1.1.1_01.zip" }, //01.04.2025
+  { name:"Alpha v1.1.1_01", type:"alpha", loader:"bat", style:"error", year:2025, zip:"https://download1654.mediafire.com/zc0d9r28fu0gSu1ypIZGW_bPCvWbcFDJjo_cIG2yQ5WfcyB19NG7pIXL4LoPc79JotPHqybPIonry4CKQod62-kDrxBv2Zfc8Y1HR7B3-AW_ZJ8C5gqndipPVu6RK28zC9iaKI1MKB9wAJwF5E8wqwVgdxffjexLmsMO1ZXC412xgvo/lzpzs1p0gesbqrj/a1.1.1_01.zip" }, //01.04.2025
 
-  { name:"Alpha v1.0.0", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"downloads/a1.0.0.zip" }, //03.04.2025
+  { name:"Alpha v1.0.0", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"https://download1532.mediafire.com/5gwcsuyi0eqgQgKNGZye3zmaWXdenwPb5trFcgnfk0mQC-Pv7VW9l-S8L_JlD2gLIUL0tsLXyOkE2JWIpBE15ERVuYfZwUKI5HuBx8VFzCDwe3KTMHO9fSjLpDpNij7a-j37V_k2z693zUcu8E55rdERO4MRhov7CXxbqenHWxRk8rM/hdh46lk01rii3m8/a1.0.0.zip" }, //03.04.2025
 
   { name:"Minecraft Death", type:"release", loader:"bat", style:"pseudochinese", year:2025, zip:"downloads/minecraft death.zip" }, //13.04.2025
 
@@ -463,7 +487,7 @@ const versions = [
 
   { name:"ERROR888", type:"release", loader:"multimc", style:"pseudochinese", year:2025, zip:"downloads/err888_safe.zip" }, //14.05.2025
 
-  { name:"Alpha v1.0.7 Developer Test", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"downloads/a1.0.7-devtest.zip" }, //19.05.2025
+  { name:"Alpha v1.0.7 Developer Test", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"https://download1654.mediafire.com/yqy47meqbmpgRkDbg7jbUPGRsIb0-reJZ2CGOe8q5UcvpyBayvHvki1Kat3qtG1LcJvVEvhn2Vh3uaEfVeL4YPXrIu91STwDl2VNlkp0Qfp-HZvpoEfJf6W06p8EipQBMrOK1onOSi9QJF0Lp6H7kHBjI-gAVPiDlsHkXCpvKe-jW_Y/5y4m1iwhfp2c0lg/a1.0.7-devtest.zip" }, //19.05.2025
 
   { name:"Minecraft 1.11.3", type:"release", loader:"exe", style:"error", year:2025, zip:"downloads/1.11.3.zip" }, //29.05.2025
 
