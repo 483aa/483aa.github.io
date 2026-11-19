@@ -1,10 +1,15 @@
-// versions.js — фильтры теперь рендерятся как чипы-переключатели
 const versions = [
   { name:"Alpha v1.0.16_02", type:"alpha", loader:"bat", style:"normal", year:2010, zip:"downloads/a1.0.16_02.zip"}, // 13.08.2010
 
+  { name:"Alpha v1.1.1", type:"alpha", loader:"launcher", style:"normal", year:2010, zip:"downloads/a1.1.1.zip"}, // 18.09.2010
+
   { name:"Alpha v1.1.1x", type:"alpha", loader:"launcher", style:"normal", year:2010, zip:"downloads/a1.1.1x.zip"}, // 18.09.2010
 
-   { name:"Minecraft 15w14a", type:"snapshot", loader:"launcher", style:"normal", year:2015, zip:"downloads/15w14a.zip" }, //06.07.2015
+  { name:"Minecraft 1.1", type:"release", loader:"launcher", style:"normal", year:2012, zip:"downloads/1.1.zip" }, //12.01.2012
+
+  { name:"Minecraft 15w14a", type:"snapshot", loader:"launcher", style:"normal", year:2015, zip:"downloads/15w14a.zip" }, //06.07.2015
+
+  { name:"Alpha v1.2.3_03", type:"alpha", loader:"bat", style:"normal", year:2019, zip:"downloads/a1.2.3_03.zip" }, //08.02.2019
 
   { name:"Minecraft HEX", type:"release", loader:"exe", style:"creepy", year:2019, zip:"downloads/hex.zip" }, //30.06.2019
 
@@ -22,8 +27,6 @@ const versions = [
 
   { name:"Alpha v1.2.6_02", type:"alpha", loader:"bat", style:"creepy", year:2020, zip:"downloads/a1.2.6_02.zip" }, //10.04.2020
 
-  { name:"Minecraft 1.1", type:"release", loader:"launcher", style:"normal", year:2020, zip:"downloads/1.1.zip" }, //25.04.2020
-
   { name:"Beta 1.8.2", type:"beta", loader:"bat", style:"normal", year:2020, zip:"downloads/b1.8.2.zip" }, //29.04.2020
 
   { name:"Alpha 666.exe", type:"alpha", loader:"bat", style:"creepy", year:2020, zip:"downloads/a666.exe.zip" }, //02.05.2020
@@ -38,19 +41,25 @@ const versions = [
 
   { name:"Minecraft 1.20 Test", type:"release", loader:"exe", style:"normal", year:2020, zip:"downloads/1.20 test.zip" }, //08.08.2020
 
+  { name:"Minecraft.exe13", type:"release", loader:"launcher", style:"creepy", year:2020, zip:"downloads/minecraft.exe13.zip" }, //11.08.2020
+
   { name:"ERROR422", type:"release", loader:"exe", style:"error", year:2020, zip:"downloads/err422.zip" }, //11.08.2020
 
   { name:"Minecraft HEX remastered", type:"release", loader:"bat", style:"creepy", year:2020, zip:"downloads/hex remastered.zip" }, //28.08.2020
+
+  { name:"Alpha 1.2.2c", type:"alpha", loader:"launcher", style:"normal", year:2020, zip:"downloads/a1.2.2c.zip" }, //29.10.2020
 
   { name:"Beta v1.0.1", type:"beta", loader:"bat", style:"normal", year:2020, zip:"downloads/b1.0.1.zip" }, //07.11.2020
 
   { name:"Alpha v1.2.7", type:"alpha", loader:"bat", style:"normal", year:2020, zip:"downloads/a1.2.7.zip" }, //02.12.2020
 
+  { name:"ChaosCraft Beta", type:"alpha", loader:"bat", style:"creepy", year:2020, zip:"downloads/chaoscraftbeta.zip" }, //08.12.2020
+
   { name:"ChaosCraft v1.0.0", type:"alpha", loader:"bat", style:"creepy", year:2020, zip:"downloads/chaoscraft1.0.0.zip" }, //23.12.2020
 
   { name:"ERROR633", type:"alpha", loader:"bat", style:"error", year:2021, zip:"downloads/err633.zip" }, //29.01.2021
 
-  { name:"Alpha v1.2.3_03", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"downloads/a1.2.3_03.zip" }, //08.02.2021
+  { name:"Alpha butcher.exe", type:"alpha", loader:"bat", style:"creepy", year:2021, zip:"downloads/butcher.exe.zip" }, //19.02.2021
 
   { name:"Alpha vE.R.R.O.R", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"downloads/ae.r.r.o.r.zip" }, //25.03.2021
 
@@ -59,6 +68,8 @@ const versions = [
   { name:"Beta 1.5_02", type:"beta", loader:"bat", style:"normal", year:2021, zip:"downloads/b1.5_02.zip" }, //10.04.2021
 
   { name:"Alpha v3.0.3", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"downloads/a3.0.3.zip" }, //24.04.2021
+
+  { name:"Minecraft.Nobody.exe", type:"beta", loader:"bat", style:"creepy", year:2021, zip:"downloads/minecraft.nobody.exe.zip" }, //03.05.2021
 
   { name:"ChaosCraft v1.1.0", type:"alpha", loader:"bat", style:"creepy", year:2021, zip:"downloads/chaoscraft1.1.0.zip" }, //23.05.2021
 
@@ -108,6 +119,8 @@ const versions = [
 
   { name:"Alpha v1.0.3_02 upd-2", type:"alpha", loader:"bat", style:"normal", year:2021, zip:"downloads/a1.0.3_02-2.zip" }, //29.12.2021
 
+  { name:"Minecraft Unknown", type:"release", loader:"bat", style:"chinese", year:2021, zip:"downloads/a1.0.3_02-2.zip" }, //29.12.2021
+
   { name:"Beta 1.1_03 (Minecraft Free)", type:"beta", loader:"exe", style:"creepy", year:2022, zip:"downloads/b1.1_03.zip" }, //02.01.2022
 
   { name:"ERROR437_07", type:"release", loader:"exe", style:"chinese", year:2022, zip:"downloads/err437_07.zip" }, //03.01.2022
@@ -130,25 +143,43 @@ const versions = [
 
   { name:"Minecraft 1.7.3", type:"release", loader:"bat", style:"normal", year:2022, zip:"downloads/1.7.3.zip" }, //11.03.2022
 
+  { name:"Minecraft Unified", type:"release", loader:"bat", style:"creepy", year:2022, zip:"downloads/unified.zip" }, //12.03.2022
+
   { name:"Minecraft Black Edition", type:"release", loader:"exe", style:"creepy", year:2022, zip:"downloads/black_edition.zip" }, //22.03.2022
+
+  { name:"Beta 1.8.3", type:"beta", loader:"bat", style:"error", year:2022, zip:"downloads/b1.8.3.zip" }, //05.03.2022
 
   { name:"Mncatapav..ierf lh 126", type:"alpha", loader:"bat", style:"creepy", year:2022, zip:"downloads/mncatapav..ierf lh 126.zip" }, //13.04.2022
 
+  { name:"Beta 1.6.7", type:"beta", loader:"bat", style:"normal", year:2022, zip:"downloads/b1.6.7.zip" }, //19.04.2022
+
   { name:"Beta 1.6.6 Test Build 1", type:"beta", loader:"exe", style:"creepy", year:2022, zip:"downloads/b1.6.6-tb1.zip" }, //23.04.2022
+
+  { name:"Beta UNDEFINE", type:"beta", loader:"bat", style:"chinese", year:2022, zip:"downloads/bundefine.zip" }, //02.05.2022
 
   { name:"Alpha v1.2.3_03 reloaded", type:"alpha", loader:"bat", style:"normal", year:2022, zip:"downloads/a1.2.3_03 reloaded.zip" }, //04.05.2022
 
   { name:"Minecraft TLORM", type:"alpha", loader:"bat", style:"normal", year:2022, zip:"downloads/tlorm.zip" }, //19.06.2022
 
+  { name:"UNDEFINE upd-1", type:"release", loader:"bat", style:"chinese", year:2022, zip:"downloads/undefine-1.zip" }, //03.07.2022
+
+  { name:"UNDEFINE upd-2", type:"release", loader:"bat", style:"chinese", year:2022, zip:"downloads/undefine-2.zip" }, //05.07.2022
+
+  { name:"UNDEFINE upd-3", type:"release", loader:"bat", style:"chinese", year:2022, zip:"downloads/undefine-3.zip" }, //07.07.2022
+
   { name:"ERROR422 remastered", type:"release", loader:"exe", style:"error", year:2022, zip:"downloads/err422 remastered.zip" }, //09.07.2022
 
-  { name:"ERROR777 (what.rar)", type:"release", loader:"bat", style:"error", year:2022, zip:"downloads/err777.zip" }, //08.02.2021
+  { name:"UNDEFINE upd-4", type:"release", loader:"bat", style:"chinese", year:2022, zip:"downloads/undefine-4.zip" }, //26.07.2022
+
+  { name:"ERROR777 (what.rar)", type:"release", loader:"bat", style:"error", year:2022, zip:"downloads/err777.zip" }, //11.07.2022
+
+  { name:"Minecraft 1.1 Patch 1", type:"release", loader:"exe", style:"normal", year:2022, zip:"downloads/1.1-patch-1.zip" }, //11.07.2022
 
   { name:"ERROR110", type:"alpha", loader:"jar", style:"error", year:2022, zip:"downloads/err110.zip" }, //13.07.2022
 
-  { name:"Minecraft 1.1 Patch 1", type:"release", loader:"exe", style:"normal", year:2022, zip:"downloads/1.1-patch-1.zip" }, //26.07.2022
-
   { name:"Beta 1.7.6", type:"beta", loader:"jar", style:"normal", year:2022, zip:"downloads/b1.7.6.zip" }, //18.08.2022
+
+  { name:"Minecraft Unpredicrable", type:"alpha", loader:"bat", style:"creepy", year:2022, zip:"downloads/unpredictable.zip" }, //30.08.2022
 
   { name:"Minecraft 1.10 Multiplayer Fix", type:"release", loader:"exe", style:"normal", year:2022, zip:"downloads/1.10 multiplayer fix.zip" }, //05.11.2022
 
@@ -159,6 +190,8 @@ const versions = [
   { name:"ERROR391_2", type:"alpha", loader:"bat", style:"error", year:2022, zip:"downloads/err391_2.zip" }, //02.12.2022
 
   { name:"ERROR391_3", type:"alpha", loader:"bat", style:"error", year:2022, zip:"downloads/err391_3.zip" }, //03.12.2022
+
+  { name:"Beta 1.3b", type:"beta", loader:"launcher", style:"normal", year:2022, zip:"downloads/b1.3b.zip" }, //04.12.2022
 
   { name:"ERROR391_can", type:"beta", loader:"jar", style:"error", year:2022, zip:"downloads/err391_can.zip" }, //05.12.2022
 
@@ -172,9 +205,19 @@ const versions = [
 
   { name:"ERROR391", type:"beta", loader:"jar", style:"pseudochinese", year:2022, zip:"downloads/err391.zip" }, //11.12.2022
 
+  { name:"Minecraft 1.3 testificate goofy ahh edition pre 1", type:"release", loader:"bat", style:"creepy", year:2022, zip:"downloads/1.3tgae_pre-1.zip" }, //16.12.2022
+
   { name:"ERROR391_01", type:"beta", loader:"jar", style:"error", year:2022, zip:"downloads/err391_01.zip" }, //18.12.2022
 
   { name:"ERROR391_0_1", type:"beta", loader:"exe", style:"error", year:2022, zip:"downloads/err391_0_1.zip" }, //27.12.2022
+
+  { name:"Alpha v1.2.0_03", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.2.0_03.zip" }, //03.01.2023
+
+  { name:"Alpha v1.2.8 (ROO)", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.2.8 roo.zip" }, //03.01.2023
+
+  { name:"Alpha v1.2.6_05", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.2.6_05=2.zip" }, //03.04.2023
+
+  { name:"Alpha v0.0.1", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a0.0.1.zip" }, //15.01.2023
 
   { name:"Alpha v1.0.16_03", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/a1.0.16_03.zip" }, //16.01.2023
 
@@ -182,21 +225,37 @@ const versions = [
 
   { name:"Minecraft 1.7.20", type:"release", loader:"exe", style:"error", year:2023, zip:"downloads/1.7.20.zip" }, //21.01.2023
 
+  { name:"Alpha v1.0.17_04", type:"release", loader:"bat", style:"normal", year:2023, zip:"downloads/a1.0.17_04.zip" }, //29.01.2023
+
+  { name:"UNDEFINE 2", type:"release", loader:"bat", style:"chinese", year:2023, zip:"downloads/undefine 2.zip" }, //05.02.2023
+
   { name:"Alpha v1.1.3", type:"alpha", loader:"launcher", style:"normal", year:2023, zip:"downloads/a1.1.3.zip" }, //19.02.2023
+
+  { name:"Delta v0.0.0 v2", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/delta0.0.0v2.zip" }, //19.02.2023
+
+  { name:"Beta Night Test Build 1", type:"beta", loader:"bat", style:"creepy", year:2023, zip:"downloads/bntb1.zip" }, //25.02.2023
+
+  { name:"Beta Night Test Build 2", type:"beta", loader:"bat", style:"error", year:2023, zip:"downloads/bntb2.zip" }, //25.02.2023
+
+  { name:"Beta Night Test Build 3", type:"beta", loader:"bat", style:"error", year:2023, zip:"downloads/bntb3.zip" }, //27.02.2023
 
   { name:"Tin20me", type:"beta", loader:"exe", style:"pseudochinese", year:2023, zip:"downloads/tin20me.zip" }, //04.03.2023
 
   { name:"Tin20me_4", type:"beta", loader:"exe", style:"pseudochinese", year:2023, zip:"downloads/tin20me_4.zip" }, //12.03.2023
 
-  { name:"Beta UNDEFINE", type:"beta", loader:"bat", style:"chinese", year:2023, zip:"downloads/bundefine.zip" }, //25.03.2023
-
   { name:"Beta 1.0-bt ", type:"beta", loader:"bat", style:"normal", year:2023, zip:"downloads/b1.0-bt.zip" }, //29.03.2023
 
   { name:"Alpha v1.0.3_02 remastered", type:"alpha", loader:"bat", style:"normal", year:2023, zip:"downloads/a1.0.3_02 remastered.zip" }, //01.04.2023
 
+  { name:"True Blue v1.0.0", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/tb1.0.0.zip" }, //12.04.2023
+
+  { name:"True Blue v1.1.0", type:"alpha", loader:"bat", style:"creepy", year:2023, zip:"downloads/tb1.1.0.zip" }, //12.04.2023
+
   { name:"Pre-Classic rd-000000", type:"alpha", loader:"bat", style:"normal", year:2023, zip:"downloads/rd-000000.zip" }, //18.04.2023
 
   { name:"Beta 1.3_02", type:"beta", loader:"bat", style:"creepy", year:2023, zip:"downloads/b1.3_02.zip" }, //21.04.2023
+
+  { name:"Beta Night Test Build 4", type:"beta", loader:"bat", style:"creepy", year:2023, zip:"downloads/bntb4.zip" }, //11.05.2023
 
   { name:"ERROR533 (Beta 1.8.4)", type:"beta", loader:"bat", style:"pseudochinese", year:2023, zip:"downloads/err533.zip" }, //13.05.2023
 
@@ -208,11 +267,13 @@ const versions = [
 
   { name:"Beta 1.12.2", type:"beta", loader:"bat", style:"normal", year:2023, zip:"downloads/b1.12.2.zip" }, //10.06.2023
 
+  { name:"Minecraft Unfirmial34", type:"release", loader:"bat", style:"error", year:2023, zip:"downloads/unfirmial34.zip" }, //15.06.2023
+
   { name:"Minecraft 6.6.6 reloaded", type:"release", loader:"bat", style:"creepy", year:2023, zip:"downloads/6.6.6 reloaded.zip" }, //22.07.2023
 
   { name:"ERROR533_02 (Beta 1.8.4)", type:"beta", loader:"exe", style:"pseudochinese", year:2023, zip:"downloads/err533_02.zip" }, //02.08.2023
 
-  { name:"Minecraft 1.3 preReIase_3", type:"release", loader:"exe", style:"normal", year:2023, zip:"downloads/1.3-pre3.zip" }, //11.08.2023
+  { name:"Minecraft 1.3 preReIase_3", type:"release", loader:"exe", style:"chinese", year:2023, zip:"downloads/1.3-pre3.zip" }, //11.08.2023
 
   { name:"Minecraft 1.20_02", type:"release", loader:"bat", style:"creepy", year:2023, zip:"downloads/1.20_02.zip" }, //13.08.2023
 
@@ -224,19 +285,25 @@ const versions = [
 
   { name:"Alpha v1.2.6_06", type:"alpha", loader:"exe", style:"chinese", year:2023, zip:"downloads/a1.2.6_06.zip" }, //01.11.2023
 
+  { name:"Alpha v1.0.14 Reissue", type:"alpha", loader:"bat", style:"normal", year:2023, zip:"downloads/a1.0.14 reissue.zip" }, //05.11.2023
+
   { name:"Beta 1.8.3 chinese edition", type:"beta", loader:"jar", style:"pseudochinese", year:2023, zip:"downloads/b1.8.3 chinese edition.zip" }, //19.11.2023
 
   { name:"Minecraft 1.1 Configure", type:"release", loader:"exe", style:"pseudochinese", year:2023, zip:"downloads/1.1 configure.zip" }, //02.12.2023
 
   { name:"Minecraft 1.1 Configure reupload", type:"release", loader:"bat", style:"pseudochinese", year:2023, zip:"downloads/1.1 configure-1 .zip" }, //02.12.2023
 
-  { name:"Beta 1.7.4 preview", type:"beta", loader:"bat", style:"creepy", year:2024, zip:"downloads/b1.7.4-preview.zip" }, //12.03.2024
+  { name:"Beta 1.7.4 preview", type:"beta", loader:"bat", style:"creepy", year:2024, zip:"downloads/b1.7.4-preview.zip" }, //01.01.2024
+
+  { name:"Minecraft UNVERSION", type:"release", loader:"bat", style:"creepy", year:2024, zip:"downloads/unversion.zip" }, //03.01.2024
 
   { name:"Alpha Pi###", type:"alpha", loader:"launcher", style:"creepy", year:2024, zip:"downloads/api###.zip" }, //19.01.2024
 
   { name:"Alpha v1.2.3_03 chinese (ERROR126)", type:"alpha", loader:"bat", style:"error", year:2024, zip:"downloads/err126.zip" }, //01.02.2024
 
   { name:"Minecraft 00w00a", type:"snapshot", loader:"jar", style:"pseudochinese", year:2024, zip:"downloads/00w00a.zip" }, //02.02.2024
+
+  { name:"Alpha Purple", type:"alpha", loader:"bat", style:"normal", year:2024, zip:"downloads/apurple.zip" }, //04.02.2024
 
   { name:"ERROR444", type:"release", loader:"launcher", style:"pseudochinese", year:2024, zip:"downloads/err444.zip" }, //10.02.2024
 
@@ -280,6 +347,8 @@ const versions = [
 
   { name:"Minecraft 1.2_01", type:"release", loader:"bat", style:"normal", year:2024, zip:"downloads/1.2_01.zip" }, //08.04.2024
 
+  { name:"Minecraft000", type:"alpha", loader:"bat", style:"error", year:2024, zip:"downloads/minecraft000.zip" }, //10.04.2024
+
   { name:"ChaosCraft v666 build 1008", type:"alpha", loader:"launcher", style:"creepy", year:2024, zip:"downloads/chaoscraft666 build 1008.zip" }, //12.04.2024
 
   { name:"Minecraft 1.6.5 (cancelled)", type:"release", loader:"exe", style:"normal", year:2024, zip:"downloads/1.6.5 cancelled.zip" }, //13.04.2024
@@ -298,6 +367,8 @@ const versions = [
 
   { name:"Beta 1.8.3-chinese_02", type:"beta", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/b1.8.3-chinese_02.zip" }, //01.05.2024
 
+  { name:"Minecraft232", type:"release", loader:"launcher", style:"pseudochinese", year:2024, zip:"downloads/minecraft232.zip" }, //01.05.2024
+
   { name:"ANYA520_3 (Minecraft.TheEndIsNear v3)", type:"release", loader:"exe", style:"pseudochinese", year:2024, zip:"downloads/anya520_3.zip" }, //02.05.2024
 
   { name:"Minecraft 1.2.6 Null remastered upd-1", type:"release", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/1.2.6 null remastered-2.zip" }, //08.05.2024
@@ -306,7 +377,6 @@ const versions = [
 
   { name:"Minecraft Mutilated", type:"alpha", loader:"exe", style:"error", year:2024, zip:"downloads/mutilated.zip" }, //12.05.2024
 
-  
   { name:"Beta 1.9.0", type:"beta", loader:"jar", style:"pseudochinese", year:2024, zip:"downloads/b1.9.0.zip" }, //15.05.2024
 
   { name:"Beta 1.8.3-chinese_03-pre", type:"beta", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/b1.8.3-chinese_03-pre.zip" }, //19.05.2024
@@ -333,6 +403,8 @@ const versions = [
 
   { name:"Beta 1.8.5 upd-1", type:"beta", loader:"jar", style:"pseudochinese", year:2024, zip:"downloads/b1.8.5-1.zip" }, //08.06.2024
 
+  { name:"ERROR147", type:"release", loader:"bat", style:"error", year:2024, zip:"downloads/err147.zip" }, //08.06.2024
+
   { name:"Beta 1.8.5 upd-2", type:"beta", loader:"jar", style:"pseudochinese", year:2024, zip:"downloads/b1.8.5-2.zip" }, //10.06.2024
 
   { name:"Minecraft 1.2.6 Null remastered upd-5", type:"release", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/1.2.6 null remastered-6.zip" }, //12.06.2024
@@ -347,29 +419,83 @@ const versions = [
 
   { name:"Minecraft 1.2.6 Null remastered upd-6", type:"release", loader:"exe", style:"pseudochinese", year:2024, zip:"downloads/1.2.6 null remastered-7.zip" }, //23.06.2024
 
+  { name:"Minecraft MiTERgNAB (MapIcc.she.is.hurting.you)", type:"release", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/mitergnab.zip" }, //10.04.2024
+  
   { name:"Minecraft 1.2.5_01 remake", type:"release", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/1.2.5_01 remake.zip" }, //11.07.2024
 
   { name:"Beta 1.8.3_01", type:"beta", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/b1.8.3_01.zip" }, //07.08.2024
 
+  { name:"Minecraft 1.2.6.exe", type:"release", loader:"exe", style:"pseudochinese", year:2024, zip:"downloads/1.2.6.exe.zip" }, //10.08.2026
+
   { name:"Minecraft 1.1.0 Test Build 5", type:"release", loader:"bat", style:"pseudochinese", year:2024, zip:"downloads/1.1.0-tb-5.zip" }, //16.08.2024
 
+  { name:"Beta 1.1a", type:"beta", loader:"bat", style:"normal", year:2024, zip:"downloads/b1.1a.zip" }, //27.08.2024
+
   { name:"Beta 6.6.6", type:"beta", loader:"jar", style:"pseudochinese", year:2024, zip:"downloads/b6.6.6.zip" }, //27.08.2024
+
+  { name:"Alpha 1.2B", type:"alpha", loader:"bat", style:"creepy", year:2024, zip:"downloads/a1.2b.zip" }, //29.08.2024
+
+  { name:"Minecraft 1.8.8", type:"release", loader:"bat", style:"normal", year:2024, zip:"downloads/1.8.8.zip" }, //04.09.2024
 
   { name:"Minecraft Free (Stingray)", type:"beta", loader:"bat", style:"creepy", year:2024, zip:"downloads/stingray.zip" }, //20.09.2024
 
   { name:"Minecraft 1.3.2 Disorderly", type:"release", loader:"launcher", style:"error", year:2024, zip:"downloads/1.3.2 disorderly.zip" }, //30.09.2024
 
+  { name:"Minecraft 1.3.2 multiplayer mode", type:"release", loader:"exe", style:"normal", year:2024, zip:"downloads/1.3.2 mp mode.zip" }, //01.10.2024
+
+  { name:"True Blue v1.2.0", type:"alpha", loader:"bat", style:"creepy", year:2024, zip:"downloads/tb1.2.0.zip" }, //20.10.2024
+
   { name:"Alpha v1.0.6_02", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"downloads/a1.0.6_02.zip" }, //02.01.2025
 
+  { name:"Beta 1.7.5 (ERROR175)", type:"beta", loader:"bat", style:"creepy", year:2025, zip:"downloads/b1.7.5.zip" }, //16.03.2025
+
+  { name:"Beta 1.8_01", type:"beta", loader:"bat", style:"normal", year:2025, zip:"downloads/b1.8_01.zip" }, //18.03.2025
+
+  { name:"Alpha v1.1.1_01", type:"alpha", loader:"bat", style:"error", year:2025, zip:"downloads/a1.1.1_01.zip" }, //01.04.2025
+
   { name:"Alpha v1.0.0", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"downloads/a1.0.0.zip" }, //03.04.2025
+
+  { name:"Minecraft Death", type:"release", loader:"bat", style:"pseudochinese", year:2025, zip:"downloads/minecraft death.zip" }, //13.04.2025
+
+  { name:"Minecraft 1.2.3_03 SinglePlayer Fix", type:"release", loader:"bat", style:"pseudochinese", year:2026, zip:"downloads/1.2.3_03 sp fix.zip" }, //18.04.2025
 
   { name:"ERROR888 (VIRUSES!!!)", type:"release", loader:"multimc", style:"pseudochinese", year:2025, zip:"downloads/err888.zip" }, //14.05.2025
 
   { name:"ERROR888", type:"release", loader:"multimc", style:"pseudochinese", year:2025, zip:"downloads/err888_safe.zip" }, //14.05.2025
 
-   { name:"Minecraft 1.11.3", type:"release", loader:"exe", style:"error", year:2025, zip:"downloads/1.11.3.zip" }, //29.05.2025
+  { name:"Alpha v1.0.7 Developer Test", type:"alpha", loader:"bat", style:"normal", year:2025, zip:"downloads/a1.0.7-devtest.zip" }, //19.05.2025
+
+  { name:"Minecraft 1.11.3", type:"release", loader:"exe", style:"error", year:2025, zip:"downloads/1.11.3.zip" }, //29.05.2025
+
+  { name:"ANYA000 (1.1_000)", type:"release", loader:"bat", style:"error", year:2025, zip:"downloads/anya000.zip" }, //14.05.2025
+
+  { name:"Minecraft Binary", type:"release", loader:"bat", style:"chinese", year:2025, zip:"downloads/binary.zip" }, //03.06.2025
+
+  { name:"Beta 1.8.1_03", type:"beta", loader:"bat", style:"normal", year:2025, zip:"downloads/b1.8.1_03.zip" }, //19.10.2025
+
+  { name:"Beta 1.7.3_01", type:"beta", loader:"bat", style:"normal", year:2025, zip:"downloads/b1.7.3_01.zip" }, //26.10.2025
+
+  { name:"Alpha v8.8.8", type:"alpha", loader:"exe", style:"error", year:2026, zip:"downloads/a8.8.8.zip" }, //18.01.2026
 
   { name:"Alpha v1.3.8", type:"alpha", loader:"multimc", style:"creepy", year:2026, zip:"downloads/a1.3.8.zip" }, //12.02.2026
+
+  { name:"ERROR6812", type:"release", loader:"bat", style:"pseudochinese", year:2026, zip:"downloads/err6812.zip" }, //29.03.2026
+
+  { name:"ERROR112", type:"release", loader:"bat", style:"pseudochinese", year:2026, zip:"downloads/err122.zip" }, //25.05.2026
+
+  { name:"Beta 1.6.8 Test Build 1", type:"beta", loader:"bat", style:"normal", year:2026, zip:"downloads/b1.6.8-tb1.zip" }, //01.06.2026
+
+  { name:"Alpha v1.2.3_07 (ERROR126)", type:"alpha", loader:"exe", style:"chinese", year:2026, zip:"downloads/a1.2.3_07.zip" }, //26.06.2026
+
+  { name:"Alpha v1.4_05", type:"alpha", loader:"bat", style:"creepy", year:2026, zip:"downloads/a1.4_05.zip" }, //13.07.2026
+
+  { name:"Alpha v1.2.6_03b (ERROR272)", type:"alpha", loader:"bat", style:"creepy", year:2026, zip:"downloads/a1.2.6_03b.zip" }, //14.07.2026
+
+  { name:"Minecraft 1.3.5 upd-2", type:"release", loader:"bat", style:"chinese", year:2026, zip:"downloads/1.3.5-2.zip" }, //09.08.2026
+
+  { name:"ERROR769", type:"release", loader:"bat", style:"pseudochinese", year:2026, zip:"downloads/err769.zip" }, //28.08.2026
+
+  { name:"UNMINECRAFT 1.2.5", type:"release", loader:"bat", style:"pseudochinese", year:2026, zip:"downloads/unminecraft-1.2.6.zip" }, //11.09.2026
 
   { name:"Minecraft 1.3.7_01", type:"release", loader:"bat", style:"pseudochinese", year:2026, zip:"downloads/1.3.7_01.zip" }, //01.10.2026
 
@@ -381,7 +507,6 @@ const versions = [
 
 const uniq = key => [...new Set(versions.map(v => v[key]))];
 
-// Чип-переключатель вместо чекбокса
 function buildColumn(containerId, key) {
   const box = document.getElementById(containerId);
   box.innerHTML = uniq(key).map(val =>
@@ -393,10 +518,8 @@ buildColumn('col-loader', 'loader');
 buildColumn('col-style', 'style');
 buildColumn('col-year', 'year');
 
-// Состояние: Set выбранных чипов по каждому ключу
 const active = { type:new Set(), loader:new Set(), style:new Set(), year:new Set() };
 
-// Клик по чипу — toggle + визуальная подсветка
 document.querySelectorAll('.chip').forEach(chip => {
   chip.addEventListener('click', () => {
     const { key, val } = chip.dataset;

@@ -1,4 +1,3 @@
-<!-- main.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,6 @@
       background: #000; color: #b0b0b0; min-height: 100vh;
       position: relative;
     }
-    /* Полупрозрачный белый шум поверх фона */
     body::before {
       content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
       opacity: .07;
@@ -48,7 +46,6 @@
       background: rgba(0,0,0,.75); border: 1px solid #3a0000;
     }
     .info-panel.open { display: block; }
-    /* Фильтры в указанном порядке: Type, Loader, Style, Year */
     .filters {
       display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
       padding: 18px; margin: 22px auto; max-width: 1000px;
@@ -67,8 +64,6 @@
       padding: 16px; background: rgba(5,5,5,.85); border: 1px solid #2a0000;
       transition: .3s;
     }
-    /* main.html — фрагмент стилей для таблицы фильтров */
-/* main.html: стили фильтров */
 .filters {
   max-width: 1000px; margin: 22px auto; padding: 18px;
   background: rgba(5,5,5,.7); border: 1px solid #2a0000;
@@ -137,12 +132,13 @@
     <h1>Minecraft Creepypasta Archive</h1>
     <button id="info-btn" class="info-btn">?</button>
     <div id="info-panel" class="info-panel">
-      <p><b>Filters:</b> <br>Type identifies the versions they were based on (Alpha/Beta/Release/Snapshot),<br> Loader identifies versions by launching it (BAT/JAR/EXE/MultiMC/Launcher),<br> Style identifies versions by launching it (Normal/Creepy/Error/Chinese/Pseudo-Chinese),<br> Year identifies versions by the year of their release (2010, 2015, 2019–2026).</p>
+      <p><b>Filters:</b> <br>Type identifies the versions they were based on (Alpha/Beta/Release/Snapshot),
+        <br> Loader identifies versions by launching it (BAT/JAR/EXE/MultiMC/Launcher),
+        <br> Style identifies versions by launching it (Normal/Creepy/Error/Chinese/Pseudo-Chinese),
+        <br> Year identifies versions by the year of their release (2010, 2015, 2019–2026).</p>
     </div>
   </header>
   <main>
-    <!-- Порядок фильтров: Type, Loader, Style, Year -->
-    <!-- main.html: секция фильтров -->
 <div class="filters">
   <div class="filters-top">
     <div class="search-wrap">
